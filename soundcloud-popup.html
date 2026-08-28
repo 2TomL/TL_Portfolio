@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TL - SoundCloud</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="soundcloud-popup.css">
+</head>
+<body class="soundcloud-popout">
+	<main class="popout-player" aria-labelledby="popout-title">
+		<div class="popout-heading">
+			<span class="section-kicker">MIXES / 06</span>
+			<div class="popout-title-wrap">
+				<span class="dj-name" aria-hidden="true">DJ MIKE</span>
+				<h1 id="popout-title">SOUNDCLOUD</h1>
+			</div>
+		</div>
+		<div class="player-frame">
+			<div class="player-status" id="player-status" role="status">Loading player...</div>
+			<iframe id="sc-iframe" title="SoundCloud player" allow="autoplay" loading="lazy" frameborder="no" scrolling="no"></iframe>
+		</div>
+		<div class="popout-row">
+			<p class="popout-text">I also DJ from time to time, enjoy!</p>
+			<label class="mix-picker">
+				<span>SELECT MIX</span>
+				<select id="mix-select" title="Choose a mix"></select>
+			</label>
+			<label class="volume-control">
+				<span>VOLUME</span>
+				<input type="range" id="popout-volume" min="0" max="100" value="100" title="Volume">
+			</label>
+		</div>
+		<p class="player-note" id="player-note">The player will keep loading independently from this window.</p>
+	</main>
+	<script src="https://w.soundcloud.com/player/api.js"></script>
+	<script src="soundcloud-popup.js"></script>
+</body>
+</html>
