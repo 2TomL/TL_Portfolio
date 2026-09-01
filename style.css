@@ -537,12 +537,17 @@ body.section-open .glow { opacity: .55; }
 	.content-section {
 		top: max(4.5rem, calc(env(safe-area-inset-top) + 4rem));
 		transform: translateX(-50%);
+		max-height: calc(100dvh - 7rem);
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
 	}
+	.content-section::-webkit-scrollbar { display: none; }
 	body.section-open .content-section.active { transform: translateX(-50%); }
 	.content-section#about-section { width: calc(100% - 2rem); }
 	.content-section#projects-section { width: calc(100% - 2rem); }
-	#contact-section.content-section { width: calc(100% - 2rem); max-height: calc(100vh - 7rem); overflow-y: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; }
-	#contact-section.content-section::-webkit-scrollbar { display: none; }
+	#contact-section.content-section { width: calc(100% - 2rem); }
 	.contact-card-wrapper { gap: .6rem; flex-wrap: nowrap; }
 	.contact-card { flex: 1 1 0; max-width: none; }
 	.contact-card-link { flex-direction: row; justify-content: center; gap: .5rem; padding: .55rem .6rem; text-align: center; }

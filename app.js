@@ -466,17 +466,6 @@ if (designFrame) {
 				"assets/grafics/BOUM/BOUM Koffie 2.png",
 				"assets/grafics/BOUM/flexi post 2 minder hoog.png"
 			]
-		},
-		{
-			name: "SOMETHING SOMETHING SATURDAY",
-			description: "Creation visuals for socials, posters and flyers.",
-			images: [
-				"assets/grafics/SomSomSat/498557848_9733397090085754_5018291291344556034_n.jpg",
-				"assets/grafics/SomSomSat/472334539_910380054631391_2791230436867479031_n.jpg",
-				"assets/grafics/SomSomSat/496948385_9733384780086985_2704374218500600342_n.jpg",
-				"assets/grafics/SomSomSat/498223728_9752928164799313_1900043364006079112_n.jpg",
-				"assets/grafics/SomSomSat/498639343_9733397280085735_924811236822040607_n.jpg"
-			]
 		}
 	];
 
