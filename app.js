@@ -409,10 +409,10 @@ if (snakeCanvas) {
 const projectFrame = document.querySelector("#project-frame");
 if (projectFrame) {
 	const projects = [
-		{ name: "DE STROOPERIJ", description: "De STrooperij event website.", image: "assets/projects/Project_De_STrooperij - Copy.png", live: "https://destrooperij.be/", github: "https://github.com/2TomL/De_STrooperij_FINAL" },
-		{ name: "KIM MARTINI PROJECT", description: "Artist website.", image: "assets/projects/Project_KM - Copy.png", live: "http://www.djkimmartini.com", github: "https://github.com/2TomL/Kim_Martini" },
-		{ name: "DJ SWORDZ", description: "Artist website.", image: "assets/projects/DJ_Swordz.png", live: "https://2toml.github.io/DJ_Swordz/", github: "https://github.com/2TomL/DJ_Swordz" },
-		{ name: "VINYL WEBSHOP", description: "Online shop for the best vinyl in Brussels.", image: "assets/projects/docvin - Copy.png", live: "https://2toml.github.io/Recordshop_Showcase_frontend/", github: "https://github.com/2TomL/doctorvinyl-Final" },
+		{ name: "DE STROOPERIJ", description: "Event website for cultural events and subscriptions.", image: "assets/projects/Project_De_STrooperij - Copy.png", live: "https://destrooperij.be/", github: "https://github.com/2TomL/De_STrooperij_FINAL" },
+		{ name: "KIM MARTINI PROJECT", description: "Artist website with SoundCloud integration, latest songs, an agenda and a sample mixer gadget.", image: "assets/projects/Project_KM - Copy.png", live: "http://www.djkimmartini.com", github: "https://github.com/2TomL/Kim_Martini" },
+		{ name: "DJ SWORDZ", description: "Artist website with projects, an updatable agenda backend, YouTube section and mobile scratch sample mixer gadget.", image: "assets/projects/DJ_Swordz.png", live: "https://2toml.github.io/DJ_Swordz/", github: "https://github.com/2TomL/DJ_Swordz" },
+		{ name: "VINYL WEBSHOP", description: "Online shop for the best vinyl in Brussels, with an admin backend for product management and automated order and shipping tools.", image: "assets/projects/docvin - Copy.png", live: "https://2toml.github.io/Recordshop_Showcase_frontend/", github: "https://github.com/2TomL/doctorvinyl-Final" },
 		{ name: "TIFFANY NAUTS", description: "Clinical Psychologist.", image: "assets/projects/Project_psy - Copy.png", live: "https://2toml.github.io/Psycho_Tiff/", github: "https://github.com/2TomL/Psycho_Tiff" },
 		{ name: "MIKEY'S MAGIC MIXER", description: "DJ set generator. Upload tracks, generate setlist, download list & mix.", image: "assets/projects/Project_MMMt - Copy.png", live: "#", github: "https://github.com/2TomL/Mikey-s_Magic_Mixer-tool", video: "assets/videos/Desktop 2025.08.26 - 20.32.04.03.mp4" },
 		{ name: "DEEDS LOGO", description: "3D logo page with video integration.", image: "assets/projects/3D landing page Deeds.png", live: "https://2toml.github.io/Deeds_Logo/", github: "https://github.com/2TomL/Deeds_Logo" },

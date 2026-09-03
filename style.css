@@ -609,6 +609,11 @@ body.section-open .glow { opacity: .55; }
 		z-index: 100;
 		transition: transform .3s ease-in-out;
 	}
+	body:not(.section-open) .mobile-menu-toggle {
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+	}
 	.vinyl-button {
 		display: flex;
 		top: auto;
@@ -618,6 +623,9 @@ body.section-open .glow { opacity: .55; }
 		height: 2.35rem;
 		z-index: 25;
 	}
+	.vinyl-button,
+	.mobile-menu button[data-mobile-section="mixes"],
+	#mixes-section.content-section { display: none; }
 	.vinyl-button .vinyl-tooltip {
 		top: auto;
 		bottom: calc(100% + 8px);
