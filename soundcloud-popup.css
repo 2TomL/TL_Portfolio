@@ -131,6 +131,35 @@ input[type="range"] { width: min(130px, 100%); cursor: pointer; }
 	input[type="range"] { width: 100%; }
 }
 
+html.is-embed,
+html.is-embed body.soundcloud-popout {
+	min-height: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+html.is-embed .popout-player {
+	width: 100%;
+	min-height: 0;
+	height: 100%;
+	padding: .15rem .1rem .25rem;
+	justify-content: flex-start;
+}
+
+html.is-embed .popout-heading,
+html.is-embed .popout-text { display: none; }
+
+html.is-embed .player-frame { margin-top: 0; }
+
+html.is-embed .popout-row {
+	grid-template-columns: 1fr 1fr;
+	margin-top: .75rem;
+}
+
+html.is-embed .volume-control { justify-items: end; }
+
+html.is-embed input[type="range"] { width: 100%; }
+
 @media (max-height: 520px) {
 	.popout-player { justify-content: flex-start; padding-top: 1rem; }
 	.popout-heading h1 { margin-bottom: .75rem; }

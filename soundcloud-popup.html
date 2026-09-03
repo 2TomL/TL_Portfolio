@@ -6,6 +6,9 @@
 	<title>TL - SoundCloud</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="soundcloud-popup.css">
+	<script>
+		document.documentElement.classList.toggle("is-embed", new URLSearchParams(location.search).has("embed"));
+	</script>
 </head>
 <body class="soundcloud-popout">
 	<main class="popout-player" aria-labelledby="popout-title">

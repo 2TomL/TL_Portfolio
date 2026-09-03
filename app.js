@@ -31,7 +31,23 @@ const mobileMenuToggle = document.querySelector("#mobile-menu-toggle");
 const mobileMenu = document.querySelector("#mobile-menu");
 const vinylButton = document.querySelector("#vinyl-button");
 
+function isMobileNav() {
+	return window.matchMedia("(max-width: 600px)").matches;
+}
+
+function ensureMixesPlayer() {
+	const mixesPlayer = document.querySelector("#mixes-player");
+	if (mixesPlayer && !mixesPlayer.getAttribute("src")) {
+		mixesPlayer.src = "soundcloud-popup.html?embed=1";
+	}
+}
+
 vinylButton.addEventListener("click", () => {
+	if (isMobileNav()) {
+		setMobileMenu(false);
+		openSection("mixes");
+		return;
+	}
 	window.open("soundcloud-popup.html", "tl-soundcloud", "popup,width=620,height=315,resizable=yes,scrollbars=yes");
 });
 
@@ -107,6 +123,30 @@ if (aboutCanvas) {
 	});
 	aboutImage.src = "assets/about-other.png";
 }
+
+document.querySelectorAll(".skill-badge").forEach((badge) => {
+	badge.tabIndex = 0;
+	badge.addEventListener("click", () => {
+		const wasOpen = badge.classList.contains("is-label-open");
+		document.querySelectorAll(".skill-badge.is-label-open").forEach((openBadge) => {
+			openBadge.classList.remove("is-label-open");
+		});
+		if (!wasOpen) badge.classList.add("is-label-open");
+	});
+	badge.addEventListener("keydown", (event) => {
+		if (event.key === "Enter" || event.key === " ") {
+			event.preventDefault();
+			badge.click();
+		}
+	});
+});
+
+document.addEventListener("click", (event) => {
+	if (event.target.closest(".skill-badge")) return;
+	document.querySelectorAll(".skill-badge.is-label-open").forEach((badge) => {
+		badge.classList.remove("is-label-open");
+	});
+});
 
 function updateCube() {
 	cube.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
@@ -207,6 +247,7 @@ function openSection(sectionId) {
 	mobileMenu.querySelectorAll("[data-mobile-section]").forEach((link) => {
 		link.classList.toggle("active", link.dataset.mobileSection === sectionId);
 	});
+	if (sectionId === "mixes") ensureMixesPlayer();
 	if (!navbarAlreadyOpen) {
 		window.setTimeout(() => scene.classList.remove("nav-entering"), 1500);
 	}

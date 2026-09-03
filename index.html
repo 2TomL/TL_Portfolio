@@ -4,6 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<title>TL - Portfolio</title>
+	<link rel="icon" type="image/jpeg" href="assets/icons/Icons general/TL_favicon.jpg">
+	<meta name="description" content="TL Portfolio - creative design and development by Tom Lamers.">
+	<meta property="og:title" content="TL - Portfolio">
+	<meta property="og:description" content="Creative design and development by Tom Lamers.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="assets/icons/Icons general/webpic.jpg">
+	<meta property="og:image:alt" content="TL Portfolio">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="TL - Portfolio">
+	<meta name="twitter:description" content="Creative design and development by Tom Lamers.">
+	<meta name="twitter:image" content="assets/icons/Icons general/webpic.jpg">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +24,7 @@
 	    <div class="letter T" data-letter="T">T</div>
 	    <div class="letter L" data-letter="L">L</div>
     </div>
-	<button class="vinyl-button" id="vinyl-button" type="button" aria-label="Vinyl">
+	<button class="vinyl-button" id="vinyl-button" type="button" aria-label="Open DJ mixes">
 		<img src="assets/icons/Icons general/vinyl.png" alt="">
 		<span class="pitch-fader" aria-hidden="true"><span class="pitch-fader-knob"></span></span>
 		<span class="vinyl-tooltip" role="tooltip">aka DJ Mike</span>
@@ -30,6 +41,7 @@
 		<button type="button" data-mobile-section="design"><span>03</span><strong>DESIGN</strong></button>
 		<button type="button" data-mobile-section="game"><span>04</span><strong>GAME</strong></button>
 		<button type="button" data-mobile-section="contact"><span>05</span><strong>CONTACT</strong></button>
+		<button type="button" data-mobile-section="mixes"><span>06</span><strong>MIXES</strong></button>
 	</nav>
 	<main class="scene" aria-label="Portfolio navigation cube">
 		<div class="cube" id="cube">
@@ -224,6 +236,12 @@
 			</a>
 		</div>
 		<p class="copyright">Made by Tom Lamers © 2026</p>
+	</section>
+	<section class="content-section" id="mixes-section" data-section="mixes" aria-labelledby="mixes-title" aria-hidden="true">
+		<span class="section-kicker">06 / MIXES</span>
+		<h1 id="mixes-title">SOUNDCLOUD</h1>
+		<p>I also DJ from time to time, enjoy!</p>
+		<iframe class="mixes-player" id="mixes-player" title="SoundCloud player" allow="autoplay" loading="lazy"></iframe>
 	</section>
 
 	<p class="instructions">DRAG TO ROTATE</p>
