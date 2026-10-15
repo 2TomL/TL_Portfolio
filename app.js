@@ -423,6 +423,7 @@ if (projectFrame) {
 		{ name: "VINYL WEBSHOP", description: "Online shop for the best vinyl in Brussels, with an admin backend for product management and automated order and shipping tools.", image: "assets/projects/docvin - Copy.png", live: "https://2toml.github.io/Recordshop_Showcase_frontend/", github: "https://github.com/2TomL/doctorvinyl-Final" },
 		{ name: "TIFFANY NAUTS", description: "Clinical Psychologist.", image: "assets/projects/Project_psy - Copy.png", live: "https://2toml.github.io/Psycho_Tiff/", github: "https://github.com/2TomL/Psycho_Tiff" },
 		{ name: "MIKEY'S MAGIC MIXER", description: "DJ set generator. Upload tracks, generate setlist, download list & mix.", image: "assets/projects/Project_MMMt - Copy.png", live: "#", github: "https://github.com/2TomL/Mikey-s_Magic_Mixer-tool", video: "assets/videos/Desktop 2025.08.26 - 20.32.04.03.mp4" },
+		{ name: "RUBIK'S CUBE", description: "3D rubik's cube for desktop & mobile", image: "assets/projects/RK_Game.png", backgroundSize: "90%", live: "https://2toml.github.io/RUBIKSCUBE_TL/", github: "https://github.com/2TomL/RUBIKSCUBE_TL" },
 		{ name: "DEEDS LOGO", description: "3D logo page with video integration.", image: "assets/projects/3D landing page Deeds.png", live: "https://2toml.github.io/Deeds_Logo/", github: "https://github.com/2TomL/Deeds_Logo" },
 		{ name: "COOK14U", description: "Creative Gamer/Streamer platform.", image: "assets/projects/Project_Cook14u - Copy.png", live: "https://2toml.github.io/Cook14U_Final/", github: "https://github.com/2TomL/Cook14U_Final" },
 		{ name: "EXCLUSIVE MOBILE APP", description: "For QR-scan", image: "assets/projects/KM_streetbeats - Copy.png", live: "https://2toml.github.io/2TomL-StreetBeats_V1/", github: "https://github.com/2TomL/2TomL-StreetBeats_V1" },
@@ -455,6 +456,7 @@ if (projectFrame) {
 		projectIndex = (index + projects.length) % projects.length;
 		const project = projects[projectIndex];
 		projectFrame.style.backgroundImage = `url("${project.image}")`;
+		projectFrame.style.backgroundSize = project.backgroundSize || "";
 		projectName.textContent = project.name;
 		projectDescription.textContent = project.description;
 		projectCount.textContent = `${String(projectIndex + 1).padStart(2, "0")} / ${String(projects.length).padStart(2, "0")}`;
