@@ -51,6 +51,11 @@ vinylButton.addEventListener("click", () => {
 	window.open("soundcloud-popup.html", "tl-soundcloud", "popup,width=620,height=315,resizable=yes,scrollbars=yes");
 });
 
+document.querySelector(".about-music-link")?.addEventListener("click", (event) => {
+	event.preventDefault();
+	vinylButton.click();
+});
+
 const aboutCanvas = document.querySelector("#about-canvas");
 if (aboutCanvas) {
 	const aboutContext = aboutCanvas.getContext("2d", { willReadFrequently: true });
@@ -387,6 +392,9 @@ if (snakeCanvas) {
 	snakeCanvas.addEventListener("touchstart", (event) => {
 		touchStart = event.touches[0];
 	}, { passive: true });
+	snakeCanvas.addEventListener("touchmove", (event) => {
+		if (isMobileNav()) event.preventDefault();
+	}, { passive: false });
 	snakeCanvas.addEventListener("touchend", (event) => {
 		if (!touchStart) return;
 		const touch = event.changedTouches[0];
@@ -461,6 +469,24 @@ if (projectFrame) {
 
 	document.querySelector("#project-prev").addEventListener("click", () => showProject(projectIndex - 1));
 	document.querySelector("#project-next").addEventListener("click", () => showProject(projectIndex + 1));
+
+	let projectSwipeStart = null;
+	projectFrame.addEventListener("pointerdown", (event) => {
+		if (!isMobileNav() || !event.isPrimary || event.target.closest("a, button")) return;
+		projectSwipeStart = { x: event.clientX, y: event.clientY };
+	});
+	projectFrame.addEventListener("pointerup", (event) => {
+		if (!projectSwipeStart) return;
+		const deltaX = event.clientX - projectSwipeStart.x;
+		const deltaY = event.clientY - projectSwipeStart.y;
+		projectSwipeStart = null;
+		if (Math.abs(deltaX) < 40 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+		event.preventDefault();
+		showProject(projectIndex + (deltaX < 0 ? 1 : -1));
+	});
+	projectFrame.addEventListener("pointercancel", () => {
+		projectSwipeStart = null;
+	});
 	showProject(0);
 }
 
@@ -544,7 +570,32 @@ if (designFrame) {
 
 	document.querySelector("#design-project-prev").addEventListener("click", () => showProjectPreview(activeProject - 1));
 	document.querySelector("#design-project-next").addEventListener("click", () => showProjectPreview(activeProject + 1));
-	designMainFrame.addEventListener("click", () => openDesignProject(activeProject));
+	let designProjectSwipeStart = null;
+	let designProjectWasSwiped = false;
+	designMainFrame.addEventListener("pointerdown", (event) => {
+		if (!isMobileNav() || !event.isPrimary) return;
+		designProjectSwipeStart = { x: event.clientX, y: event.clientY };
+	});
+	designMainFrame.addEventListener("pointerup", (event) => {
+		if (!designProjectSwipeStart) return;
+		const deltaX = event.clientX - designProjectSwipeStart.x;
+		const deltaY = event.clientY - designProjectSwipeStart.y;
+		designProjectSwipeStart = null;
+		if (Math.abs(deltaX) < 40 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+		event.preventDefault();
+		designProjectWasSwiped = true;
+		showProjectPreview(activeProject + (deltaX < 0 ? 1 : -1));
+	});
+	designMainFrame.addEventListener("pointercancel", () => {
+		designProjectSwipeStart = null;
+	});
+	designMainFrame.addEventListener("click", () => {
+		if (designProjectWasSwiped) {
+			designProjectWasSwiped = false;
+			return;
+		}
+		openDesignProject(activeProject);
+	});
 	showProjectPreview(0);
 
 	function renderDots(project) {
